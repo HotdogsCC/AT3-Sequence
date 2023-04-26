@@ -392,7 +392,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 488209861}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 993677945}
+        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
+        m_MethodName: LoadThisScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Game
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488209861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +646,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &993677943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7792812506268066348, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+  m_PrefabInstance: {fileID: 7792812505615446107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &993677945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993677943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e534b7987cf774c81903aa85f5420eb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1961656728
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,3 +800,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961656728}
   m_CullTransparentMesh: 1
+--- !u!1001 &7792812505615446107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066339, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792812506268066348, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}
+      propertyPath: m_Name
+      value: SceneManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dbe208b86ed8741a6a8d3f52d28a42ff, type: 3}

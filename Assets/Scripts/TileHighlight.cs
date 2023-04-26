@@ -7,7 +7,12 @@ using UnityEngine.EventSystems;
 public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private Image image;
-    
+
+    [SerializeField] private string nameOfTile;
+    [SerializeField] private int xPos;
+    [SerializeField] private int yPos;
+
+
     // Start is called before the first frame update
     void Start()
     {
