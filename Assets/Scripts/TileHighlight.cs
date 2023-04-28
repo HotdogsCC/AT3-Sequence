@@ -20,10 +20,6 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     // Update is called once per frame
-    private void OnMouseOver()
-    {
-        Debug.Log("Success!");
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
