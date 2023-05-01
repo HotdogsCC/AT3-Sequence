@@ -67,11 +67,19 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("Other")]
     Image cardImage;
     [SerializeField] string cardName;
+    [SerializeField] bool cardSelected = false;
+    private TileHighlight[] tileHighlightList;
+    private CardHighlight[] cardHighlightList;
+
 
     private void Start()
     {
         cardImage = GetComponent<Image>();
         SetImageOnCard(cardName);
+
+        tileHighlightList = FindObjectsOfType<TileHighlight>();
+        cardHighlightList = FindObjectsOfType<CardHighlight>();
+
 
     }
 
@@ -300,16 +308,39 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        cardImage.color = new Color(0.8820755f, 0.9924621f, 1f, 1f);
+        if (!cardSelected)
+        {
+            cardImage.color = new Color(0.8820755f, 0.9924621f, 1f, 1f);
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        cardImage.color = Color.white;
+        if (!cardSelected)
+        {
+            cardImage.color = Color.white;
+        }
+
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f);
+        foreach (CardHighlight card in cardHighlightList)
+        {
+            card.cardImage.color = Color.white;
+            card.cardSelected = false;
+        }
+
+        if (!cardSelected)
+        {
+            foreach (TileHighlight tiles in tileHighlightList)
+            {
+                tiles.DehighlightTiles();
+                tiles.HighlightTiles(cardName);
+            }
+            cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f);
+            cardSelected = true;
+        }
     }
 }

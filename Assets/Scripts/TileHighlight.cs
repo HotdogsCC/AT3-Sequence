@@ -30,4 +30,17 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         image.color = Color.clear;
     }
+
+    public void HighlightTiles(string selectedCardName)
+    {
+        if(nameOfTile == selectedCardName)
+        {
+            image.color = new Color(0f, 0f, 1f, 0.4f);
+        }
+    }
+
+    public void DehighlightTiles()
+    {
+        image.color = Color.clear;
+    }
 }

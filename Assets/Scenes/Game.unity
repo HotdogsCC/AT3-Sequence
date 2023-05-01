@@ -3221,7 +3221,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: JC
+  cardSelected: 0
 --- !u!1 &509296706
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4135,7 @@ GameObject:
   - component: {fileID: 624750064}
   - component: {fileID: 624750066}
   - component: {fileID: 624750065}
+  - component: {fileID: 624750067}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -4200,6 +4202,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624750063}
   m_CullTransparentMesh: 1
+--- !u!114 &624750067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624750063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e1b15a9c3274f3e939264746d66b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &643684932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5276,7 +5290,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: 3C
+  cardSelected: 0
 --- !u!1 &866944239
 GameObject:
   m_ObjectHideFlags: 0
@@ -6608,7 +6623,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: 3C
+  cardSelected: 0
 --- !u!1 &1209196858
 GameObject:
   m_ObjectHideFlags: 0
@@ -7345,7 +7361,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: 9D
+  cardSelected: 0
 --- !u!1 &1320439517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9315,7 +9332,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: AH
+  cardSelected: 0
 --- !u!1 &1582028565
 GameObject:
   m_ObjectHideFlags: 0
@@ -9577,6 +9595,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardName: KS
+  cardSelected: 0
 --- !u!1 &1589416138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10670,7 +10689,8 @@ MonoBehaviour:
   jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
-  cardName: 
+  cardName: 7H
+  cardSelected: 0
 --- !u!1 &1690292845
 GameObject:
   m_ObjectHideFlags: 0
