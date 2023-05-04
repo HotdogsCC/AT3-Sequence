@@ -329,18 +329,33 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         foreach (CardHighlight card in cardHighlightList)
         {
             card.cardImage.color = Color.white;
-            card.cardSelected = false;
+        }
+
+        foreach (TileHighlight tiles in tileHighlightList)
+        {
+            tiles.DehighlightTiles();
         }
 
         if (!cardSelected)
         {
             foreach (TileHighlight tiles in tileHighlightList)
             {
-                tiles.DehighlightTiles();
                 tiles.HighlightTiles(cardName);
             }
             cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f);
+            foreach (CardHighlight card in cardHighlightList)
+            {
+                card.cardSelected = false;
+            }
             cardSelected = true;
+        }
+        else
+        {
+            cardImage.color = Color.white;
+            foreach (CardHighlight card in cardHighlightList)
+            {
+                card.cardSelected = false;
+            }
         }
     }
 }
