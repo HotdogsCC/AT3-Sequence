@@ -179,6 +179,7 @@ MonoBehaviour:
   nameOfTile: AS
   xPos: 5
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &7414795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +300,7 @@ MonoBehaviour:
   nameOfTile: 4D
   xPos: 7
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &16713983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   nameOfTile: 4S
   xPos: 9
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &59084990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,6 +914,7 @@ MonoBehaviour:
   nameOfTile: 7C
   xPos: 7
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &61331760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1035,7 @@ MonoBehaviour:
   nameOfTile: 3S
   xPos: 1
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &76477141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,6 +1156,7 @@ MonoBehaviour:
   nameOfTile: KC
   xPos: 2
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &78556057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1353,7 @@ MonoBehaviour:
   nameOfTile: 7H
   xPos: 5
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &125188235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,6 +1474,7 @@ MonoBehaviour:
   nameOfTile: 6S
   xPos: 9
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &150723340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,6 +1595,7 @@ MonoBehaviour:
   nameOfTile: 3C
   xPos: 6
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &152176043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,6 +1716,7 @@ MonoBehaviour:
   nameOfTile: QH
   xPos: 3
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &154936180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,6 +1837,7 @@ MonoBehaviour:
   nameOfTile: 8C
   xPos: 4
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &162861979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,6 +1902,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &165649580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165649582}
+  - component: {fileID: 165649581}
+  m_Layer: 0
+  m_Name: Board Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &165649581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165649580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b649b5caddd6249afdad591315a610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &165649582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165649580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1065.7108, y: 575.08307, z: -2.1617417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168935098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +2002,7 @@ MonoBehaviour:
   nameOfTile: 4C
   xPos: 8
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &168935101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2199,7 @@ MonoBehaviour:
   nameOfTile: 2D
   xPos: 4
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &202178983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,6 +2320,7 @@ MonoBehaviour:
   nameOfTile: 8H
   xPos: 3
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &204931824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,6 +2517,7 @@ MonoBehaviour:
   nameOfTile: AH
   xPos: 5
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &217687818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2731,6 +2790,7 @@ MonoBehaviour:
   nameOfTile: 7C
   xPos: 5
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &240552073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2795,6 +2855,141 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &243879234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243879235}
+  - component: {fileID: 243879237}
+  - component: {fileID: 243879236}
+  m_Layer: 5
+  m_Name: Two Eyed Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &243879235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243879234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 643684936}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 104, y: 54}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &243879236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243879234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: TWO Eyed Jacks are WILD
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &243879237
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243879234}
+  m_CullTransparentMesh: 1
 --- !u!1 &249811628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,6 +3350,7 @@ MonoBehaviour:
   nameOfTile: AD
   xPos: 0
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &311990714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3427,6 +3623,7 @@ MonoBehaviour:
   nameOfTile: QS
   xPos: 5
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &335580655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3775,6 +3972,7 @@ MonoBehaviour:
   nameOfTile: QC
   xPos: 2
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &376873100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3971,6 +4169,7 @@ MonoBehaviour:
   nameOfTile: 2D
   xPos: 7
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &404611922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4319,6 +4518,7 @@ MonoBehaviour:
   nameOfTile: 2S
   xPos: 9
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &449406998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4591,6 +4791,7 @@ MonoBehaviour:
   nameOfTile: QD
   xPos: 0
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &492075217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4787,6 +4988,7 @@ MonoBehaviour:
   nameOfTile: 8H
   xPos: 6
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &499166698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,11 +5191,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: JC
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &509296706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5050,6 +5254,7 @@ MonoBehaviour:
   nameOfTile: 7H
   xPos: 4
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &509296709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5246,6 +5451,7 @@ MonoBehaviour:
   nameOfTile: QD
   xPos: 3
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &513992890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5518,6 +5724,7 @@ MonoBehaviour:
   nameOfTile: 10D
   xPos: 0
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &535636108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,6 +5845,7 @@ MonoBehaviour:
   nameOfTile: AC
   xPos: 1
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &541907041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5758,6 +5966,7 @@ MonoBehaviour:
   nameOfTile: 2H
   xPos: 4
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &575179728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5954,6 +6163,7 @@ MonoBehaviour:
   nameOfTile: 3C
   xPos: 8
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &584714489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6074,6 +6284,7 @@ MonoBehaviour:
   nameOfTile: 5C
   xPos: 8
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &596465817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6217,7 +6428,6 @@ GameObject:
   - component: {fileID: 624750064}
   - component: {fileID: 624750066}
   - component: {fileID: 624750065}
-  - component: {fileID: 624750067}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -6284,18 +6494,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624750063}
   m_CullTransparentMesh: 1
---- !u!114 &624750067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624750063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e1b15a9c3274f3e939264746d66b1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &629571809
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,7 +6722,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -6542,6 +6740,8 @@ RectTransform:
   m_Children:
   - {fileID: 624750064}
   - {fileID: 1447985369}
+  - {fileID: 243879235}
+  - {fileID: 1585950656}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6606,6 +6806,7 @@ MonoBehaviour:
   nameOfTile: 6C
   xPos: 6
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &649161357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6802,6 +7003,7 @@ MonoBehaviour:
   nameOfTile: 2C
   xPos: 6
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &658184003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6998,6 +7200,7 @@ MonoBehaviour:
   nameOfTile: 10D
   xPos: 4
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &680489725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7118,6 +7321,7 @@ MonoBehaviour:
   nameOfTile: KH
   xPos: 8
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &692908842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7238,6 +7442,7 @@ MonoBehaviour:
   nameOfTile: 3S
   xPos: 9
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &700457446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7586,6 +7791,7 @@ MonoBehaviour:
   nameOfTile: 9H
   xPos: 7
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &743702899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8010,6 +8216,7 @@ MonoBehaviour:
   nameOfTile: 8D
   xPos: 6
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &790328902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8212,11 +8419,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: 3C
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &815225397
 GameObject:
   m_ObjectHideFlags: 0
@@ -8293,6 +8502,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815225397}
   m_CullTransparentMesh: 1
+--- !u!1 &824154860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824154862}
+  - component: {fileID: 824154861}
+  m_Layer: 0
+  m_Name: Cards Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &824154861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824154860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbce357ae9220d429975747f2683e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckOfCards: []
+--- !u!4 &824154862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824154860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1065.7108, y: 575.08307, z: -2.1617417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830048122
 GameObject:
   m_ObjectHideFlags: 0
@@ -8425,6 +8679,7 @@ MonoBehaviour:
   nameOfTile: 7D
   xPos: 0
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &866944242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8545,6 +8800,7 @@ MonoBehaviour:
   nameOfTile: 3D
   xPos: 7
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &893708126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8893,6 +9149,7 @@ MonoBehaviour:
   nameOfTile: 2S
   xPos: 1
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &935523412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9013,6 +9270,7 @@ MonoBehaviour:
   nameOfTile: 7S
   xPos: 9
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &985806208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9284,6 +9542,7 @@ MonoBehaviour:
   nameOfTile: FREE[3]
   xPos: 0
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1031902340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9556,6 +9815,7 @@ MonoBehaviour:
   nameOfTile: QS
   xPos: 7
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1078090153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9828,6 +10088,7 @@ MonoBehaviour:
   nameOfTile: 6D
   xPos: 0
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1100400887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10100,6 +10361,7 @@ MonoBehaviour:
   nameOfTile: KH
   xPos: 4
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &1122150519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10220,6 +10482,7 @@ MonoBehaviour:
   nameOfTile: 5C
   xPos: 6
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &1125853213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10416,6 +10679,7 @@ MonoBehaviour:
   nameOfTile: KS
   xPos: 6
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1171844279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10770,11 +11034,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: 3C
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &1203423701
 GameObject:
   m_ObjectHideFlags: 0
@@ -10983,6 +11249,7 @@ MonoBehaviour:
   nameOfTile: 8S
   xPos: 9
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1209196861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11103,6 +11370,7 @@ MonoBehaviour:
   nameOfTile: KD
   xPos: 0
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &1210911013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11299,6 +11567,7 @@ MonoBehaviour:
   nameOfTile: 10C
   xPos: 4
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1229450429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11419,6 +11688,7 @@ MonoBehaviour:
   nameOfTile: 5S
   xPos: 9
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1240244792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11539,6 +11809,7 @@ MonoBehaviour:
   nameOfTile: 5D
   xPos: 7
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1262126588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11741,11 +12012,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: 9D
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &1274974865
 GameObject:
   m_ObjectHideFlags: 0
@@ -11954,6 +12227,7 @@ MonoBehaviour:
   nameOfTile: 7S
   xPos: 1
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1320439520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12074,6 +12348,7 @@ MonoBehaviour:
   nameOfTile: 4D
   xPos: 2
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1354596678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12346,6 +12621,7 @@ MonoBehaviour:
   nameOfTile: 10C
   xPos: 2
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &1393384981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12466,6 +12742,7 @@ MonoBehaviour:
   nameOfTile: 10S
   xPos: 8
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1394343274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12814,6 +13091,7 @@ MonoBehaviour:
   nameOfTile: 8C
   xPos: 6
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1428467154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13052,6 +13330,7 @@ MonoBehaviour:
   nameOfTile: FREE[1]
   xPos: 0
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1452851924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13400,6 +13679,7 @@ MonoBehaviour:
   nameOfTile: 10H
   xPos: 8
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1479864355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13520,6 +13800,7 @@ MonoBehaviour:
   nameOfTile: 7D
   xPos: 7
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1488835787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13640,6 +13921,7 @@ MonoBehaviour:
   nameOfTile: 9D
   xPos: 0
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1496376751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13836,6 +14118,7 @@ MonoBehaviour:
   nameOfTile: 5S
   xPos: 1
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &1506376424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13956,6 +14239,7 @@ MonoBehaviour:
   nameOfTile: 5D
   xPos: 1
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1508224571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14076,6 +14360,7 @@ MonoBehaviour:
   nameOfTile: 9H
   xPos: 3
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1510530963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14196,6 +14481,7 @@ MonoBehaviour:
   nameOfTile: 3H
   xPos: 1
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1515999191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14468,6 +14754,7 @@ MonoBehaviour:
   nameOfTile: 9S
   xPos: 3
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1559510390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14588,6 +14875,7 @@ MonoBehaviour:
   nameOfTile: 10S
   xPos: 4
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1568685589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14866,11 +15154,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: AH
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &1582028565
 GameObject:
   m_ObjectHideFlags: 0
@@ -14927,6 +15217,7 @@ MonoBehaviour:
   nameOfTile: 8S
   xPos: 2
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1582028568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15067,6 +15358,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583399254}
   m_CullTransparentMesh: 1
+--- !u!1 &1585950655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585950656}
+  - component: {fileID: 1585950658}
+  - component: {fileID: 1585950657}
+  m_Layer: 5
+  m_Name: One Eyed Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1585950656
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585950655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 643684936}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -106, y: 54}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1585950657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585950655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: ONE Eyed Jacks REMOVE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1585950658
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585950655}
+  m_CullTransparentMesh: 1
 --- !u!1 &1588884526
 GameObject:
   m_ObjectHideFlags: 0
@@ -15205,11 +15631,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: KS
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &1589416138
 GameObject:
   m_ObjectHideFlags: 0
@@ -15266,6 +15694,7 @@ MonoBehaviour:
   nameOfTile: 4C
   xPos: 6
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1589416141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15386,6 +15815,7 @@ MonoBehaviour:
   nameOfTile: 3D
   xPos: 3
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1590748909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15506,6 +15936,7 @@ MonoBehaviour:
   nameOfTile: 4H
   xPos: 5
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1609020435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15626,6 +16057,7 @@ MonoBehaviour:
   nameOfTile: 3H
   xPos: 4
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1611115678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15746,6 +16178,7 @@ MonoBehaviour:
   nameOfTile: QH
   xPos: 8
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1613174266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15866,6 +16299,7 @@ MonoBehaviour:
   nameOfTile: 8D
   xPos: 0
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &1614040024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15986,6 +16420,7 @@ MonoBehaviour:
   nameOfTile: 2H
   xPos: 1
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1617371838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16106,6 +16541,7 @@ MonoBehaviour:
   nameOfTile: KC
   xPos: 2
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1619541726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16308,11 +16744,13 @@ MonoBehaviour:
   eightD: {fileID: 21300000, guid: e4d32d2dec06b41f4a4b11cab1a7f0dd, type: 3}
   nineD: {fileID: 21300000, guid: 81ae7eb5fd80442ac92ebdb6f8244476, type: 3}
   tenD: {fileID: 21300000, guid: 39301631a7b61487b8b2ca5dcae512bb, type: 3}
-  jackD: {fileID: 21300000, guid: 845a698dd12c449f3a055e532f6e1128, type: 3}
+  jackD: {fileID: 21300000, guid: a63bb19544d88475f9dc0ec4311ef320, type: 3}
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
+  cardImage: {fileID: 0}
   cardName: 7H
   cardSelected: 0
+  cardsManager: {fileID: 824154861}
 --- !u!1 &1646027987
 GameObject:
   m_ObjectHideFlags: 0
@@ -16521,6 +16959,7 @@ MonoBehaviour:
   nameOfTile: 9S
   xPos: 9
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1690292848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16641,6 +17080,7 @@ MonoBehaviour:
   nameOfTile: AS
   xPos: 7
   yPos: 1
+  boardManager: {fileID: 165649581}
 --- !u!114 &1696374063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16837,6 +17277,7 @@ MonoBehaviour:
   nameOfTile: AC
   xPos: 2
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1714134326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17109,6 +17550,7 @@ MonoBehaviour:
   nameOfTile: 6S
   xPos: 1
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &1764093520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17457,6 +17899,7 @@ MonoBehaviour:
   nameOfTile: KD
   xPos: 2
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1786723409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17577,6 +18020,7 @@ MonoBehaviour:
   nameOfTile: 9C
   xPos: 5
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1802106347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17773,6 +18217,7 @@ MonoBehaviour:
   nameOfTile: AH
   xPos: 8
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &1811580078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17893,6 +18338,7 @@ MonoBehaviour:
   nameOfTile: 6H
   xPos: 5
   yPos: 3
+  boardManager: {fileID: 165649581}
 --- !u!114 &1815378061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18013,6 +18459,7 @@ MonoBehaviour:
   nameOfTile: 4H
   xPos: 2
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1826130114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18133,6 +18580,7 @@ MonoBehaviour:
   nameOfTile: KS
   xPos: 6
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1838968831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18404,6 +18852,7 @@ MonoBehaviour:
   nameOfTile: FREE[4]
   xPos: 9
   yPos: 9
+  boardManager: {fileID: 165649581}
 --- !u!114 &1869630980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18524,6 +18973,7 @@ MonoBehaviour:
   nameOfTile: 6C
   xPos: 8
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1871290538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18643,6 +19093,7 @@ MonoBehaviour:
   nameOfTile: FREE[2]
   xPos: 9
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1878663477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18763,6 +19214,7 @@ MonoBehaviour:
   nameOfTile: 9D
   xPos: 5
   yPos: 7
+  boardManager: {fileID: 165649581}
 --- !u!114 &1885292974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18883,6 +19335,7 @@ MonoBehaviour:
   nameOfTile: 6D
   xPos: 7
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &1894215250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19003,6 +19456,7 @@ MonoBehaviour:
   nameOfTile: 5H
   xPos: 5
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1928162341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19123,6 +19577,7 @@ MonoBehaviour:
   nameOfTile: 2C
   xPos: 8
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &1939110977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19243,6 +19698,7 @@ MonoBehaviour:
   nameOfTile: QC
   xPos: 3
   yPos: 0
+  boardManager: {fileID: 165649581}
 --- !u!114 &1947478545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19439,6 +19895,7 @@ MonoBehaviour:
   nameOfTile: 5H
   xPos: 3
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &1953479747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19787,6 +20244,7 @@ MonoBehaviour:
   nameOfTile: AD
   xPos: 2
   yPos: 6
+  boardManager: {fileID: 165649581}
 --- !u!114 &1984082948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20135,6 +20593,7 @@ MonoBehaviour:
   nameOfTile: 6H
   xPos: 4
   yPos: 8
+  boardManager: {fileID: 165649581}
 --- !u!114 &2017226169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20255,6 +20714,7 @@ MonoBehaviour:
   nameOfTile: 4S
   xPos: 1
   yPos: 4
+  boardManager: {fileID: 165649581}
 --- !u!114 &2040382103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20679,6 +21139,7 @@ MonoBehaviour:
   nameOfTile: 9C
   xPos: 3
   yPos: 2
+  boardManager: {fileID: 165649581}
 --- !u!114 &2126880381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20875,6 +21336,7 @@ MonoBehaviour:
   nameOfTile: 10H
   xPos: 3
   yPos: 5
+  boardManager: {fileID: 165649581}
 --- !u!114 &2140006450
 MonoBehaviour:
   m_ObjectHideFlags: 0

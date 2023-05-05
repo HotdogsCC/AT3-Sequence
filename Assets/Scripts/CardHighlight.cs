@@ -65,11 +65,13 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] Sprite kingD;
 
     [Header("Other")]
-    Image cardImage;
+    public Image cardImage;
     [SerializeField] string cardName;
-    [SerializeField] bool cardSelected = false;
+    public bool cardSelected = false;
     private TileHighlight[] tileHighlightList;
     private CardHighlight[] cardHighlightList;
+
+    [SerializeField] CardsManager cardsManager;
 
 
     private void Start()
@@ -357,5 +359,16 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 card.cardSelected = false;
             }
         }
+    }
+
+    public void TokenWasPlaced()
+    {
+        cardImage.color = Color.white;
+        if (cardSelected)
+        {
+            cardName = cardsManager.DrawNewCard(cardName);
+            SetImageOnCard(cardName);
+        }
+        cardSelected = false;
     }
 }
