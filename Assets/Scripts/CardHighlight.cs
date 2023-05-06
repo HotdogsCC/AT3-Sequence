@@ -66,7 +66,7 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     [Header("Other")]
     public Image cardImage;
-    [SerializeField] string cardName;
+    public string cardName;
     public bool cardSelected = false;
     private TileHighlight[] tileHighlightList;
     private CardHighlight[] cardHighlightList;
@@ -77,15 +77,15 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private void Start()
     {
         cardImage = GetComponent<Image>();
-        SetImageOnCard(cardName);
 
         tileHighlightList = FindObjectsOfType<TileHighlight>();
         cardHighlightList = FindObjectsOfType<CardHighlight>();
 
-
+        cardName = cardsManager.DrawNewCard(null);
+        SetImageOnCard(cardName);
     }
 
-    private void SetImageOnCard(string _cardName)
+    public void SetImageOnCard(string _cardName)
     {
         switch (_cardName)
         {

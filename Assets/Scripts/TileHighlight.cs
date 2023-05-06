@@ -14,7 +14,8 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private bool highlighed = false;
 
-    private GameObject tokenImage;
+    private GameObject tokenImageGO;
+    private Image tokenImageComponent;
 
     private TileHighlight[] tileHighlightList;
     private CardHighlight[] cardHighlightList;
@@ -25,7 +26,8 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     void Start()
     {
         image = gameObject.GetComponent<Image>();
-        tokenImage = gameObject.transform.GetChild(0).gameObject;
+        tokenImageGO = gameObject.transform.GetChild(0).gameObject;
+        tokenImageComponent = tokenImageGO.GetComponent<Image>();
 
         tileHighlightList = FindObjectsOfType<TileHighlight>();
         cardHighlightList = FindObjectsOfType<CardHighlight>();
@@ -61,18 +63,26 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (highlighed)
         {
-            Debug.Log("I clicked!");
+
+            if (boardManager.isPlayer1)
+            {
+                tokenImageComponent.color = Color.white;
+            }
+            else
+            {
+                tokenImageComponent.color = Color.yellow;
+            }
 
             if (boardManager.gameBoardArray[yPos, xPos] == 1)
             {
-                tokenImage.SetActive(false);
-                boardManager.gameBoardArray[yPos, xPos] = 0;
+                tokenImageGO.SetActive(false);
+                boardManager.UpdateBoard(xPos, yPos, true);
             }
 
             else
             {
-                tokenImage.SetActive(true);
-                boardManager.gameBoardArray[yPos, xPos] = 1;
+                tokenImageGO.SetActive(true);
+                boardManager.UpdateBoard(xPos, yPos, false);
             }
 
             foreach (CardHighlight card in cardHighlightList)

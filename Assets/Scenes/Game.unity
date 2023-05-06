@@ -1931,6 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b649b5caddd6249afdad591315a610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer1: 1
 --- !u!4 &165649582
 Transform:
   m_ObjectHideFlags: 0
@@ -5195,7 +5196,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: JC
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &509296706
@@ -8423,7 +8424,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: 3C
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &815225397
@@ -8531,7 +8532,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbce357ae9220d429975747f2683e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckOfCards: []
+  deckOfCards:
+  - AC
+  - 2C
+  - 3C
+  - 4C
+  - 5C
+  - 6C
+  - 7C
+  - 8C
+  - 9C
+  - 10C
+  - JC
+  - QC
+  - KC
+  - AH
+  - 2H
+  - 3H
+  - 4H
+  - 5H
+  - 6H
+  - 7H
+  - 8H
+  - 9H
+  - 10H
+  - JH
+  - QH
+  - KH
+  - AS
+  - 2S
+  - 3S
+  - 4S
+  - 5S
+  - 6S
+  - 7S
+  - 8S
+  - 9S
+  - 10S
+  - JS
+  - QS
+  - KS
+  - AD
+  - 2D
+  - 3D
+  - 4D
+  - 5D
+  - 6D
+  - 7D
+  - 8D
+  - 9D
+  - 10D
+  - JD
+  - QD
+  - KD
+  - AC
+  - 2C
+  - 3C
+  - 4C
+  - 5C
+  - 6C
+  - 7C
+  - 8C
+  - 9C
+  - 10C
+  - JC
+  - QC
+  - KC
+  - AH
+  - 2H
+  - 3H
+  - 4H
+  - 5H
+  - 6H
+  - 7H
+  - 8H
+  - 9H
+  - 10H
+  - JH
+  - QH
+  - KH
+  - AS
+  - 2S
+  - 3S
+  - 4S
+  - 5S
+  - 6S
+  - 7S
+  - 8S
+  - 9S
+  - 10S
+  - JS
+  - QS
+  - KS
+  - AD
+  - 2D
+  - 3D
+  - 4D
+  - 5D
+  - 6D
+  - 7D
+  - 8D
+  - 9D
+  - 10D
+  - JD
+  - QD
+  - KD
 --- !u!4 &824154862
 Transform:
   m_ObjectHideFlags: 0
@@ -11038,7 +11143,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: 3C
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &1203423701
@@ -12016,7 +12121,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: 9D
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &1274974865
@@ -15158,7 +15263,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: AH
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &1582028565
@@ -15635,7 +15740,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: KS
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &1589416138
@@ -16748,7 +16853,7 @@ MonoBehaviour:
   queenD: {fileID: 21300000, guid: 5644c86a57dba457c9cdc037fc200a7e, type: 3}
   kingD: {fileID: 21300000, guid: 29f23880b993a454087894eb0fa29689, type: 3}
   cardImage: {fileID: 0}
-  cardName: 7H
+  cardName: 
   cardSelected: 0
   cardsManager: {fileID: 824154861}
 --- !u!1 &1646027987
