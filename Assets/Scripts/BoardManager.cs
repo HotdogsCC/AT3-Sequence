@@ -39,6 +39,12 @@ public class BoardManager : MonoBehaviour
 
     public bool isPlayer1 = true;
 
+    public CardsManager cardsManager;
+
+    [SerializeField] private SceneManagement sceneManager;
+
+    [SerializeField] private Revealer revealer;
+
     public void UpdateBoard(int xPos, int yPos, bool oneEyedJack)
     {
         if (oneEyedJack)
@@ -57,6 +63,7 @@ public class BoardManager : MonoBehaviour
                 p1BoardArray[yPos, xPos] = 1;
                 if(HorizontalRowsOfFive("P1") || VerticalRowsOfFive("P1") || DiagonalPosGradRowsOfFive("P1") || DiagonalNegGradRowsOfFive("P1"))
                 {
+                    sceneManager.GameOver(true);
                     Debug.Log("Player 1 Won!");
                 }
             }
@@ -65,12 +72,14 @@ public class BoardManager : MonoBehaviour
                 p2BoardArray[yPos, xPos] = 1;
                 if (HorizontalRowsOfFive("P2") || VerticalRowsOfFive("P2") || DiagonalPosGradRowsOfFive("P2") || DiagonalNegGradRowsOfFive("P2"))
                 {
+                    sceneManager.GameOver(false);
                     Debug.Log("Player 2 Won!");
                 }
             }
         }
 
         isPlayer1 = !isPlayer1;
+        revealer.Show();
     }
 
     private bool HorizontalRowsOfFive(string player)

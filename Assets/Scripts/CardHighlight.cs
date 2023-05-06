@@ -80,8 +80,12 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         tileHighlightList = FindObjectsOfType<TileHighlight>();
         cardHighlightList = FindObjectsOfType<CardHighlight>();
+        StartCoroutine(WaitThenDraw());
+    }
 
-        cardName = cardsManager.DrawNewCard(null);
+    private IEnumerator WaitThenDraw()
+    {
+        yield return new WaitForSeconds(0f);
         SetImageOnCard(cardName);
     }
 
@@ -366,8 +370,7 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         cardImage.color = Color.white;
         if (cardSelected)
         {
-            cardName = cardsManager.DrawNewCard(cardName);
-            SetImageOnCard(cardName);
+            cardsManager.SwapPlayerHand(cardName);
         }
         cardSelected = false;
     }
