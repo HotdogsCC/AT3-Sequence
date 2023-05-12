@@ -139,27 +139,26 @@ public class BoardManager : MonoBehaviour
     {
         bool rowDetected = true; //Used for checking whether a row has been found
 
-        if (player == "P1")
+        if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++) //Used to iterate between each column
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible position on a single column
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each tile in a possible sequence of 5
                     {
-                        if (p1BoardArray[k, i] == 0)
+                        if (p1BoardArray[k, i] == 0) //If there is an empty space, it cannot be a sequence of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
                     }
 
                     if (rowDetected)
                     {
-                        Debug.Log("player 1 has a row of 5 vertically");
-                        return true;
+                        return true; //If there is a sequence of 5, return true
                     }
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
