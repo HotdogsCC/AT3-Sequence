@@ -77,6 +77,14 @@ public class BoardManager : MonoBehaviour
         }
 
         isPlayer1 = !isPlayer1; //swaps turns
+        if (isPlayer1)
+        {
+            revealer.playerTurnText.text = SceneManagement.player1Name + "'s Turn";
+        }
+        else
+        {
+            revealer.playerTurnText.text = SceneManagement.player2Name + "'s Turn";
+        }
         revealer.Show(); //displays game object that blocks cards
     }
 
