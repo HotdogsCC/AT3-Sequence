@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class LastCard : MonoBehaviour
 {
     //Cards
     [Header("Cards")]
@@ -67,32 +66,16 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("Other")]
     public Image cardImage;
     public string cardName;
-    public bool cardSelected = false;
-    private TileHighlight[] tileHighlightList;
-    private CardHighlight[] cardHighlightList;
-    public LastCard lastCard;
 
-    [SerializeField] CardsManager cardsManager;
-
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         cardImage = GetComponent<Image>();
-
-        tileHighlightList = FindObjectsOfType<TileHighlight>();
-        cardHighlightList = FindObjectsOfType<CardHighlight>();
-        StartCoroutine(WaitThenDraw());
     }
 
-    private IEnumerator WaitThenDraw()
+    public void SetImageOnCard()
     {
-        yield return new WaitForSeconds(0f);
-        SetImageOnCard(cardName);
-    }
-
-    public void SetImageOnCard(string _cardName)
-    {
-        switch (_cardName)
+        switch (cardName)
         {
             case "AC":
                 cardImage.sprite = aceC;
@@ -311,70 +294,5 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             default:
                 break;
         }
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!cardSelected)
-        {
-            cardImage.color = new Color(0.8820755f, 0.9924621f, 1f, 1f);
-        }
-        
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (!cardSelected)
-        {
-            cardImage.color = Color.white;
-        }
-
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        lastCard.cardName = cardName;
-
-        foreach (CardHighlight card in cardHighlightList)
-        {
-            card.cardImage.color = Color.white;
-        }
-
-        foreach (TileHighlight tiles in tileHighlightList)
-        {
-            tiles.DehighlightTiles();
-        }
-
-        if (!cardSelected)
-        {
-            foreach (TileHighlight tiles in tileHighlightList)
-            {
-                tiles.HighlightTiles(cardName);
-            }
-            cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f);
-            foreach (CardHighlight card in cardHighlightList)
-            {
-                card.cardSelected = false;
-            }
-            cardSelected = true;
-        }
-        else
-        {
-            cardImage.color = Color.white;
-            foreach (CardHighlight card in cardHighlightList)
-            {
-                card.cardSelected = false;
-            }
-        }
-    }
-
-    public void TokenWasPlaced()
-    {
-        cardImage.color = Color.white;
-        if (cardSelected)
-        {
-            cardsManager.SwapPlayerHand(cardName);
-        }
-        cardSelected = false;
     }
 }

@@ -12,6 +12,8 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private int xPos;
     [SerializeField] private int yPos;
 
+    public LastCard lastCard;
+
     private bool highlighed = false;
 
     private GameObject tokenImageGO;
@@ -21,6 +23,8 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private CardHighlight[] cardHighlightList;
 
     [SerializeField] BoardManager boardManager;
+
+    private bool wasIJustClicked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +59,14 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-            image.color = Color.clear;
+            if (wasIJustClicked)
+            {
+                image.color = new Color(1f, 1f, 0f, 0.4f);
+            }
+            else
+            {
+                image.color = Color.clear;
+            }
         }
     }
 
@@ -63,14 +74,15 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (highlighed)
         {
+            lastCard.SetImageOnCard();
 
             if (boardManager.isPlayer1)
             {
-                tokenImageComponent.color = Color.white;
+                tokenImageComponent.color = new Color(0f, 0f, 1f, 0.7f);
             }
             else
             {
-                tokenImageComponent.color = Color.yellow;
+                tokenImageComponent.color = new Color(0f, 1f, 0f, 0.7f);
             }
 
             if (boardManager.gameBoardArray[yPos, xPos] == 1)
@@ -92,8 +104,11 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             foreach (TileHighlight tiles in tileHighlightList)
             {
+                tiles.wasIJustClicked = false;
                 tiles.DehighlightTiles();
             }
+            wasIJustClicked = true;
+            DehighlightTiles();
         }
 
    
@@ -123,7 +138,15 @@ public class TileHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void DehighlightTiles()
     {
-        image.color = Color.clear;
+        if (wasIJustClicked)
+        {
+            image.color = new Color(1f, 1f, 0f, 0.4f);
+        }
+        else
+        {
+            image.color = Color.clear;
+        }
+
         highlighed = false;
     }
 }
