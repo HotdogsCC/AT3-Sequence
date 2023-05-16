@@ -45,8 +45,17 @@ public class BoardManager : MonoBehaviour
 
     [SerializeField] private Revealer revealer; //Reference to revealer script
 
+    [SerializeField] private AudioSource tokenSFX;
+
+    private void Start()
+    {
+        tokenSFX = GetComponent<AudioSource>();
+    }
+
     public void UpdateBoard(int xPos, int yPos, bool oneEyedJack) //Updates the game board, takes in the x and y position on the board and whether it was a one eyed jack
     {
+        tokenSFX.Play();
+
         if (oneEyedJack) //Sets the selected space as empty (one eyed jacks remove)
         {
             gameBoardArray[yPos, xPos] = 0;
@@ -77,7 +86,8 @@ public class BoardManager : MonoBehaviour
         }
 
         isPlayer1 = !isPlayer1; //swaps turns
-        if (isPlayer1)
+
+        if (isPlayer1) //Displays who's turn it is
         {
             revealer.playerTurnText.text = SceneManagement.player1Name + "'s Turn";
         }
@@ -172,126 +182,122 @@ public class BoardManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++) //Used to iterate between each column
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible position on a single column
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each tile in a possible sequence of 5
                     {
-                        if (p2BoardArray[k, i] == 0)
+                        if (p2BoardArray[k, i] == 0) //If there is an empty space, it cannot be a sequence of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
                     }
 
                     if (rowDetected)
                     {
-                        Debug.Log("player 2 has a row of 5 vertically");
-                        return true;
+                        return true; //If there is a sequence of 5, return true
                     }
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
 
 
-        return false;
+        return false; //After all positions have been checked and true hasn't been returned, there is no sequence of 5. Return false.
     }
 
-    private bool DiagonalNegGradRowsOfFive(string player)
+    private bool DiagonalNegGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
     {
-        bool rowDetected = true;
+        bool rowDetected = true; //Used for checking whether a row has been found
 
-        if(player == "P1")
+        if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++) //Used to iterate between each position a negative diagonal row could start from
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible starting position on a row
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each position on one possible diagonal
                     {
-                        if (p1BoardArray[i, k] == 0)
+                        if (p1BoardArray[i, k] == 0) // If there is an empty space, it can't be a row of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
 
-                        i++;
+                        i++; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) 
                     {
-                        Debug.Log("player 1 has a row of 5 diagonally on a negative gradient");
-                        return true;
+                        return true; //If there is a sequence of 5, return true
                     }
 
-                    i = i - 5;
+                    i = i - 5; //Resets for the next iteration
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
         else
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++) //Used to iterate between each position a negative diagonal row could start from
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible starting position on a row
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each position on one possible diagonal
                     {
-                        if (p2BoardArray[i, k] == 0)
+                        if (p2BoardArray[i, k] == 0) // If there is an empty space, it can't be a row of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
 
-                        i++;
+                        i++; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) 
                     {
-                        Debug.Log("player 2 has a row of 5 diagonally on a negative gradient");
-                        return true;
+                        return true; //If there is a sequence of 5, return true
                     }
 
-                    i = i - 5;
+                    i = i - 5; //Resets for the next iteration
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
 
-        return false;
+        return false; //After all positions have been checked and true hasn't been returned, there is no sequence of 5. Return false.
     }
 
-    private bool DiagonalPosGradRowsOfFive(string player)
+    private bool DiagonalPosGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
     {
-        bool rowDetected = true;
+        bool rowDetected = true; //Used for checking whether a row has been found
 
-        if(player == "P1")
+        if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
-            for (int i = 9; i > 3; i--)
+            for (int i = 9; i > 3; i--) //Used to iterate between each position a negative diagonal row could start from
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible starting position on a row
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each position on one possible diagonal
                     {
-                        if (p1BoardArray[i, k] == 0)
+                        if (p1BoardArray[i, k] == 0) //If there is an empty space, it can't be a row of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
 
-                        i--;
+                        i--; //Incriments column as it is a diagonal it's checking
                     }
 
                     if (rowDetected)
                     {
-                        Debug.Log("player 1 has a row of 5 diagonally on a positive gradient");
-                        return true;
+                        return true; //If there is a sequence of 5, return true
                     }
 
-                    i = i + 5;
+                    i = i + 5; //Resets for the next iteration
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
@@ -313,7 +319,6 @@ public class BoardManager : MonoBehaviour
 
                     if (rowDetected)
                     {
-                        Debug.Log("player 2 has a row of 5 diagonally on a positive gradient");
                         return true;
                     }
 

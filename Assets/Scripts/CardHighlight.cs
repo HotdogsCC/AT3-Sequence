@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    //Cards
+    //Initialise Card Sprites for Rendering
     [Header("Cards")]
     [SerializeField] Sprite aceC;
     [SerializeField] Sprite twoC;
@@ -64,33 +64,37 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] Sprite queenD;
     [SerializeField] Sprite kingD;
 
+
+    //Initialise other stuff
     [Header("Other")]
-    public Image cardImage;
-    public string cardName;
-    public bool cardSelected = false;
-    private TileHighlight[] tileHighlightList;
-    private CardHighlight[] cardHighlightList;
-    public LastCard lastCard;
+    public Image cardImage; //Image component for rendering image
+    public string cardName; //Stores name of the card assigned to the card component
+    public bool cardSelected = false; //Stores whether the card is currently sellected
+    private TileHighlight[] tileHighlightList; //Stores tiles
+    private CardHighlight[] cardHighlightList; //Stores other card components
+    public LastCard lastCard; //Reference to the LastCard script
+    private AudioSource cardSFX;
 
-    [SerializeField] CardsManager cardsManager;
+    [SerializeField] CardsManager cardsManager; //Reference to CardManager script
 
 
-    private void Start()
+    private void Start() //When the game starts
     {
-        cardImage = GetComponent<Image>();
+        cardImage = GetComponent<Image>(); //Assign the image component
+        cardSFX = GetComponent<AudioSource>();
 
-        tileHighlightList = FindObjectsOfType<TileHighlight>();
-        cardHighlightList = FindObjectsOfType<CardHighlight>();
-        StartCoroutine(WaitThenDraw());
+        tileHighlightList = FindObjectsOfType<TileHighlight>(); //Add all tiles to the list
+        cardHighlightList = FindObjectsOfType<CardHighlight>(); //Add all other card componets to the list
+        StartCoroutine(WaitThenDraw()); //Waits for the cards to be assigned names before setting images
     }
 
-    private IEnumerator WaitThenDraw()
+    private IEnumerator WaitThenDraw() //Waits a little bit before executing
     {
         yield return new WaitForSeconds(0f);
-        SetImageOnCard(cardName);
+        SetImageOnCard(cardName); //Sets image on card
     }
 
-    public void SetImageOnCard(string _cardName)
+    public void SetImageOnCard(string _cardName) //Converts the name of the card to the sprite to display
     {
         switch (_cardName)
         {
@@ -313,68 +317,70 @@ public class CardHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData) //Activates when the cursor is above a card
     {
-        if (!cardSelected)
+        if (!cardSelected) //Checks if the card is not selected
         {
-            cardImage.color = new Color(0.8820755f, 0.9924621f, 1f, 1f);
+            cardImage.color = new Color(0.8820755f, 0.9924621f, 1f, 1f); //Changes colour to an opaque blue
         }
         
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData) //Activates when the cursor is no longer above the card
     {
-        if (!cardSelected)
+        if (!cardSelected) //Checks if the card is not selected
         {
-            cardImage.color = Color.white;
+            cardImage.color = Color.white; //Changes colour to white
         }
 
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData) //Activates when the cursor clicks on the card
     {
-        lastCard.cardName = cardName;
+        lastCard.cardName = cardName; //Saves the last card used as the card clicked
 
-        foreach (CardHighlight card in cardHighlightList)
+        foreach (CardHighlight card in cardHighlightList) //Makes all other cards white (so they no longer appear selected)
         {
             card.cardImage.color = Color.white;
         }
 
-        foreach (TileHighlight tiles in tileHighlightList)
+        foreach (TileHighlight tiles in tileHighlightList) //Dehighlights all tiles
         {
             tiles.DehighlightTiles();
         }
 
-        if (!cardSelected)
+        if (!cardSelected) //Checks to see whether this card is already selected
         {
-            foreach (TileHighlight tiles in tileHighlightList)
+            cardSFX.Play();
+            foreach (TileHighlight tiles in tileHighlightList) //Highlight tiles which match the card
             {
                 tiles.HighlightTiles(cardName);
             }
-            cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f);
-            foreach (CardHighlight card in cardHighlightList)
+            cardImage.color = new Color(0.6179246f, 1f, 0.9856288f, 1f); //Sets the image to a bright blue (appear selected)
+            foreach (CardHighlight card in cardHighlightList) //Assigns all other card components as not selected
             {
                 card.cardSelected = false;
             }
-            cardSelected = true;
+            cardSelected = true; //Assigns this card as selected
         }
-        else
+        else //If this card is already selected, it deselects this card when clicked on
         {
-            cardImage.color = Color.white;
-            foreach (CardHighlight card in cardHighlightList)
+            cardImage.color = Color.white; //Removes colour (dehighlights)
+            foreach (CardHighlight card in cardHighlightList) //Makes all cards not selected
             {
                 card.cardSelected = false;
             }
         }
     }
 
-    public void TokenWasPlaced()
+    public void TokenWasPlaced() //Activates when a token is placed
     {
-        cardImage.color = Color.white;
+        cardImage.color = Color.white; //Dehighlights the card
         if (cardSelected)
         {
-            cardsManager.SwapPlayerHand(cardName);
+            cardsManager.SwapPlayerHand(cardName); //Swaps the cards from displaying player 1 to player 2 or vise versa
+                                                   //Passes the card placed so that it can be removed from the player's hand
         }
-        cardSelected = false;
+        cardSelected = false; //This card is no longer selected
     }
 }
