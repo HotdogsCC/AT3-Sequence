@@ -64,7 +64,7 @@ public class CardsManager : MonoBehaviour
         {
             player2Cards.Remove(cardName); //Removes the card that was just used from player 2's hand
             player2Cards.Add(DrawNewCard()); //Draws a new card for player 2
-            player2Cards = BubbleSort(player2Cards);
+            player2Cards = BubbleSort(player2Cards); //Sorts the cards
             
             foreach (CardHighlight card in cardGO) //Assigns each card game object to the card it should display
             {
@@ -76,11 +76,11 @@ public class CardsManager : MonoBehaviour
 
         else
         {
-            player1Cards.Remove(cardName); //Same as above but for player 1
-            player1Cards.Add(DrawNewCard());
-            player1Cards = BubbleSort(player1Cards);
+            player1Cards.Remove(cardName); //Removes the card that was just used from player 1's hand
+            player1Cards.Add(DrawNewCard()); //Draws a new card for player 1
+            player1Cards = BubbleSort(player1Cards); //Sorts the cards
 
-            foreach (CardHighlight card in cardGO)
+            foreach (CardHighlight card in cardGO) //Assigns each card game object to the card it should display
             {
                 card.cardName = player2Cards[j];
                 card.SetImageOnCard(player2Cards[j]);
@@ -89,7 +89,7 @@ public class CardsManager : MonoBehaviour
         }
     }
 
-    private int GetCardValueForSorting(string _cardName)
+    private int GetCardValueForSorting(string _cardName) //Assigns rank to each card for sorting
     {
         switch (_cardName)
         {
@@ -260,7 +260,7 @@ public class CardsManager : MonoBehaviour
         }
     }
 
-    private string GetCardNameForSorting(int _cardValue)
+    private string GetCardNameForSorting(int _cardValue) //Converts the sorted rank back into the card names
     {
         switch (_cardValue)
         {
@@ -431,25 +431,25 @@ public class CardsManager : MonoBehaviour
         }
     }
 
-    private List<string> BubbleSort(List<string> listToSort)
+    private List<string> BubbleSort(List<string> listToSort) //Sorts the deck of cards inputted
     {
-        List<int> cardValueList = new List<int>();
-        List<string> listToReturn = new List<string>();
+        List<int> cardValueList = new List<int>(); //Temp list for storing values
+        List<string> listToReturn = new List<string>(); //Temp list for storing card names
 
-        foreach (var card in listToSort)
+        foreach (var card in listToSort) //Stores each card as it's value into the value list
         {
             cardValueList.Add(GetCardValueForSorting(card));
         }
 
-        bool swapped = true;
+        bool swapped = true; //Used for looping until sorted
 
-        while (swapped)
+        while (swapped) //Sorts cards
         {
             swapped = false;
-            int i = 0;
+            int i = 0; //Counter for each card
             while (i<6)
             {
-                if(cardValueList[i] > cardValueList[i + 1])
+                if(cardValueList[i] > cardValueList[i + 1]) //Checks two cards and swaps them if they're not sorted
                 {
                     var temp = cardValueList[i];
                     cardValueList[i] = cardValueList[i + 1];
@@ -457,15 +457,15 @@ public class CardsManager : MonoBehaviour
                     swapped = true;
                 }
 
-                i++;
+                i++; //Increment
             }
 
         }
-        foreach (var item in cardValueList)
+        foreach (var item in cardValueList) //Converts the sorted values back into cards
         {
             listToReturn.Add(GetCardNameForSorting(item));
         }
-        return listToReturn;
+        return listToReturn; //Returns the sorted deck
 
     }
 }

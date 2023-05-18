@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LastCard : MonoBehaviour
 {
-    //Cards
+    //Card Images
     [Header("Cards")]
     [SerializeField] Sprite aceC;
     [SerializeField] Sprite twoC;
@@ -64,16 +64,16 @@ public class LastCard : MonoBehaviour
     [SerializeField] Sprite kingD;
 
     [Header("Other")]
-    public Image cardImage;
-    public string cardName;
+    public Image cardImage; //Used for setting the image
+    public string cardName; //Used for saving the name of the card it should display
 
     // Start is called before the first frame update
     void Start()
     {
-        cardImage = GetComponent<Image>();
+        cardImage = GetComponent<Image>(); //Assigns image component
     }
 
-    public void SetImageOnCard()
+    public void SetImageOnCard() //Used to set image on card based upon card name
     {
         switch (cardName)
         {

@@ -6,19 +6,19 @@ using TMPro;
 public class Revealer : MonoBehaviour
 {
     [SerializeField] private GameObject blocker; //Initialises game object resonponsible for hiding the cards while the players switch turns
-    [SerializeField] public TextMeshProUGUI playerTurnText;
+    [SerializeField] public TextMeshProUGUI playerTurnText; //UI component that display's the next player's turn
 
-    private void Start()
+    private void Start() //Runs when the game starts
     {
-        playerTurnText.text = SceneManagement.player1Name + "'s Turn";
+        playerTurnText.text = SceneManagementing.player1Name + "'s Turn"; //Displays player 1's turn
     }
 
-    public void Hide() //Hides the cards
+    public void Hide() //Reveals the cards
     {
         blocker.SetActive(false);
     }
 
-    public void Show() //Shows the cards
+    public void Show() //Blocks the cards
     {
         blocker.SetActive(true);
     }

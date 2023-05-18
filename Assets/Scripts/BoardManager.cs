@@ -41,13 +41,13 @@ public class BoardManager : MonoBehaviour
 
     public CardsManager cardsManager; //Reference to card manager script
 
-    [SerializeField] private SceneManagement sceneManager; //Reference to sceen manager script
+    [SerializeField] private SceneManagementing sceneManager; //Reference to sceen manager script
 
     [SerializeField] private Revealer revealer; //Reference to revealer script
 
-    [SerializeField] private AudioSource tokenSFX;
+    [SerializeField] private AudioSource tokenSFX; //Initiallises componet that plays the token SFX
 
-    private void Start()
+    private void Start() //When the game boots up, assign the token SFX component
     {
         tokenSFX = GetComponent<AudioSource>();
     }
@@ -70,17 +70,23 @@ public class BoardManager : MonoBehaviour
             if (isPlayer1) //Checks whether player 1 or 2 put down the token
             {
                 p1BoardArray[yPos, xPos] = 1; //Stores the position
-                if(HorizontalRowsOfFive("P1") || VerticalRowsOfFive("P1") || DiagonalPosGradRowsOfFive("P1") || DiagonalNegGradRowsOfFive("P1")) //Checks for rows of 5
+
+                //Calculates total amount of rows player 1 got
+                int totalRows = HorizontalRowsOfFive("P1") + VerticalRowsOfFive("P1") + DiagonalNegGradRowsOfFive("P1") + DiagonalPosGradRowsOfFive("P1");
+                if(totalRows >= SceneManagementing.rowsToFind) //Checks whether they have enough rows, depending on the mode
                 {
-                    sceneManager.GameOver(true); //Runs the game over function in the scene manager script, passing that player 1 won
+                    sceneManager.GameOver(true); //Player 1 wins
                 }
             }
             else
             {
                 p2BoardArray[yPos, xPos] = 1; //Stores the position
-                if (HorizontalRowsOfFive("P2") || VerticalRowsOfFive("P2") || DiagonalPosGradRowsOfFive("P2") || DiagonalNegGradRowsOfFive("P2")) //Checks for rows of 5
+
+                //Calculates total amount of rows player 2 got
+                int totalRows = HorizontalRowsOfFive("P2") + VerticalRowsOfFive("P2") + DiagonalNegGradRowsOfFive("P2") + DiagonalPosGradRowsOfFive("P2");
+                if (totalRows >= SceneManagementing.rowsToFind) //Checls whether they have enough rows, depending on the mode
                 {
-                    sceneManager.GameOver(false); //Runs the game over function in the scene manager script, passing that player 2 won
+                    sceneManager.GameOver(false); //Player 2 Wins
                 }
             }
         }
@@ -89,18 +95,20 @@ public class BoardManager : MonoBehaviour
 
         if (isPlayer1) //Displays who's turn it is
         {
-            revealer.playerTurnText.text = SceneManagement.player1Name + "'s Turn";
+            revealer.playerTurnText.text = SceneManagementing.player1Name + "'s Turn";
         }
         else
         {
-            revealer.playerTurnText.text = SceneManagement.player2Name + "'s Turn";
+            revealer.playerTurnText.text = SceneManagementing.player2Name + "'s Turn";
         }
+
         revealer.Show(); //displays game object that blocks cards
     }
 
-    private bool HorizontalRowsOfFive(string player) //Checks for rows of 5 horizontally 
+    private int HorizontalRowsOfFive(string player) //Checks for rows of 5 horizontally 
     {
         bool rowDetected = true; //Used for checking whether a row has been found
+        int numOfRows = 0;
 
         if(player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
@@ -116,9 +124,10 @@ public class BoardManager : MonoBehaviour
                         }
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a row of 5, return true
+                        numOfRows++; //Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     rowDetected = true; //Resets for the next iteration
@@ -139,9 +148,10 @@ public class BoardManager : MonoBehaviour
                         }
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a row of 5, return true
+                        numOfRows++;//Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     rowDetected = true; //Resets for the next iteration
@@ -150,12 +160,13 @@ public class BoardManager : MonoBehaviour
         }
         
         
-        return false; //After all positions have been checked and true hasn't been returned, there is no row of 5. Return false.
+        return numOfRows; //Returns the amount of rows detected 
     }
 
-    private bool VerticalRowsOfFive(string player) //Checks for rows of 5 vertically 
+    private int VerticalRowsOfFive(string player) //Checks for rows of 5 vertically 
     {
         bool rowDetected = true; //Used for checking whether a row has been found
+        int numOfRows = 0;
 
         if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
@@ -171,9 +182,10 @@ public class BoardManager : MonoBehaviour
                         }
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a sequence of 5, return true
+                        numOfRows++;//Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     rowDetected = true; //Resets for the next iteration
@@ -194,9 +206,10 @@ public class BoardManager : MonoBehaviour
                         }
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a sequence of 5, return true
+                        numOfRows++; //Increases row count by 1
+                        j = 6;  //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     rowDetected = true; //Resets for the next iteration
@@ -205,12 +218,13 @@ public class BoardManager : MonoBehaviour
         }
 
 
-        return false; //After all positions have been checked and true hasn't been returned, there is no sequence of 5. Return false.
+        return numOfRows; //Returns the amount of rows detected 
     }
 
-    private bool DiagonalNegGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
+    private int DiagonalNegGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
     {
         bool rowDetected = true; //Used for checking whether a row has been found
+        int numOfRows = 0;
 
         if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
@@ -228,9 +242,10 @@ public class BoardManager : MonoBehaviour
                         i++; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected) 
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a sequence of 5, return true
+                        numOfRows++; //Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     i = i - 5; //Resets for the next iteration
@@ -255,9 +270,10 @@ public class BoardManager : MonoBehaviour
                         i++; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected) 
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a sequence of 5, return true
+                        numOfRows++; //Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     i = i - 5; //Resets for the next iteration
@@ -267,12 +283,13 @@ public class BoardManager : MonoBehaviour
             }
         }
 
-        return false; //After all positions have been checked and true hasn't been returned, there is no sequence of 5. Return false.
+        return numOfRows; //Returns the amount of rows detected 
     }
 
-    private bool DiagonalPosGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
+    private int DiagonalPosGradRowsOfFive(string player) //Checks for rows of 5 diagonally on a negative gradient 
     {
         bool rowDetected = true; //Used for checking whether a row has been found
+        int numOfRows = 0;
 
         if (player == "P1") //Checks if the algorithm is testing for player 1 or 2
         {
@@ -290,9 +307,10 @@ public class BoardManager : MonoBehaviour
                         i--; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true; //If there is a sequence of 5, return true
+                        numOfRows++; //Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
                     i = i + 5; //Resets for the next iteration
@@ -303,32 +321,33 @@ public class BoardManager : MonoBehaviour
         }
         else
         {
-            for (int i = 9; i > 3; i--)
+            for (int i = 9; i > 3; i--) //Used to iterate between each position a positive diagonal row could start from
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 6; j++) //Used to iterate between each possible starting position on a row
                 {
-                    for (int k = j; k < j + 5; k++)
+                    for (int k = j; k < j + 5; k++) //Used to iterate between each position on one possible diagonal
                     {
-                        if (p2BoardArray[i, k] == 0)
+                        if (p2BoardArray[i, k] == 0) // If there is an empty space, it can't be a row of 5
                         {
-                            rowDetected = false;
+                            rowDetected = false; //Stores that there is no sequence of 5
                         }
 
-                        i--;
+                        i--; //Incriments column as it is a diagonal it's checking
                     }
 
-                    if (rowDetected)
+                    if (rowDetected) //Activates when there is a row detected
                     {
-                        return true;
+                        numOfRows++; //Increases row count by 1
+                        j = 6; //Skips out of loop to ensure a row of 6 is not counted as 2 rows of 5
                     }
 
-                    i = i + 5;
+                    i = i + 5; //Resets for the next iteration
 
-                    rowDetected = true;
+                    rowDetected = true; //Resets for the next iteration
                 }
             }
         }
 
-        return false;
+        return numOfRows; //Returns the amount of rows detected 
     }
 }
