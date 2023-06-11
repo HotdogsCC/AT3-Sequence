@@ -10,6 +10,7 @@ public class SceneManagementing : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI winText;  //Initialises text element for displaying the winner
     [SerializeField] GameObject winScreen; //Initialises the Game Object responsible for displaying the win screen
+    [SerializeField] GameObject aboutScreen; //Initialises the Game Object responsible for displaying the about screen
 
     [SerializeField] public static string player1Name = "Player 1"; //Stores the player names
     [SerializeField] public static string player2Name = "Player 2";
@@ -79,5 +80,15 @@ public class SceneManagementing : MonoBehaviour
                 rowsToggle.isOn = false;
             }
         }
+    }
+
+    public void OpenAbout()
+    {
+        aboutScreen.SetActive(true);
+    }
+
+    public void CloseAbout()
+    {
+        aboutScreen.SetActive(false);
     }
 }
